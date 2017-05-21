@@ -10,25 +10,25 @@ const {
     folderNames
 } = config;
 
-const selectorTemplate = templates.selector;
-const selectorFolderName = folderNames['selectors'];
+const actionCreatorTemplate = templates.actionCreator;
+const actionCreatorFolderName = folderNames['actionCreators'];
 
 const name = argv._[0];
 if (!name) {
-    throw new Error("No name is specified for this selector. Specify one like so: redux-tool-selector taxAmount");
+    throw new Error("No name is specified for this actionCreator. Specify one like so: redux-tool-actionCreator taxAmount");
 }
 
 const { camel } = require('./../utility/toMultipleCases')(name);
-const selectorName = `${camel}Selector`;
-const filename = `${selectorName}.js`;
-const folderPath = `${path}${selectorFolderName}/`;
+const actionCreatorName = `${camel}`;
+const filename = `${actionCreatorName}.js`;
+const folderPath = `${path}${actionCreatorFolderName}/`;
 const newFilePath = folderPath + filename;
-const fileHTML = template(selectorTemplate)({name:camel});
+const fileHTML = template(actionCreatorTemplate)({name:camel});
 const writeFiles = require('./../utility/writeFiles');
 
 writeFiles({
     folderPath,
     newFilePath,
     fileHTML,
-    name:selectorName
+    name:actionCreatorName
 });

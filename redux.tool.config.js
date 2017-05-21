@@ -4,4 +4,9 @@ module.exports = {
         selector:require('./templates/selector'),
         exportStatement: require('./templates/exportStatement')
     },
+    folderNames:{
+        selectors:'selectors',
+        actionCreators:'actions',
+        reducers:'reducers'
+    }
 };
