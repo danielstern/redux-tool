@@ -10,3 +10,11 @@ Redux-Tool, an *unopinionated* helper to create your Redux files for you, handli
 
 ## Usage
 Redux tool is run from the command line.
+It creates necessary files for a React-Redux application and updates the index. 
+It assumes you are using ES6 with `import` statements.
+
+Example:
+`redux-tool-selector taxAmount`
+ 
+ Description: Create a file `./src/selectors/taxAmountSelector.js` and updates the index of the `./src/selectors/` directory. 
+ 

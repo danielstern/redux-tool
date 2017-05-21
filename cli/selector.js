@@ -1,11 +1,35 @@
 #!/usr/bin/env node
 
-const argv = require('optimist').argv;
+const { argv } = require('optimist');
+const { template, assign } = require('lodash');
+let config = require('./../redux.tool.config');
 const fs = require('fs');
-const { template } = require('lodash');
-const selectorTemplate = require('../templates/selector');
 
+const mkdirp = require('mkdirp');
 const s = require('underscore.string');
+const selectorTemplate = require('../templates/selector');
+const exportStatementTemplate = require('./../templates/exportStatement');
+
+// const dir = process.cwd;
+try {
+    const path = require('path');
+    // const config = require(`${dir}/redux.tool.config.js`);
+    console.log("Located local configuration.");
+    const configPath = path.join(path.dirname(fs.realpathSync(__filename)), '../redux.tool.config.js');
+    let externalConfig = require(configPath);
+    config = assign(config,externalConfig);
+    console.log(configPath, config);
+} catch (e) {
+    console.log("Could not find config file, using defaults.",e);
+
+}
+const {
+    path
+} = config;
+// fs.readFile(dir/, "utf8", (err,data)=>{
+// console.log(process.cwd());
+// return;
+
 const name = argv._[0];
 if (!name) {
     throw new Error("No name is specified for this selector. Specify one like so: redux-tool-selector taxAmount");
@@ -13,34 +37,31 @@ if (!name) {
 
 const camel = s.camelcase(name);
 const filename = `${camel}Selector.js`;
-const path = './src/selectors/';
-const joined = path + filename;
-const indexPath = `${path}index.js`;
+const folderPath = `${path}selectors/`;
+const joined = folderPath + filename;
+const indexPath = `${folderPath}index.js`;
 const selectorName = `${camel}Selector`;
 const fileHTML = template(selectorTemplate)({camel});
-console.log(fileHTML);
-return;
-const exportStatement = `export { ${selectorName} } from './${selectorName}'
-`
-console.log(exportStatement);
-console.log(fileHTML);
-console.log(`File contents:`);
-fs.writeFile(joined,fileHTML,(cb)=>{
-    console.log(`File "${joined}" created. Thank you for being cool!`);
+const exportStatement = template(exportStatementTemplate)({name:selectorName});
 
+mkdirp(folderPath,(err)=>{
+    if (err) throw err;
+    fs.writeFile(joined,fileHTML,()=>{
+        console.log(`File "${joined}" created.`);
+
+        fs.readFile(indexPath, "utf8", (err,data)=>{
+            if (data === undefined) {
+                data = "";
+            }
+            if (data.includes(camel)){
+                console.log(`Not modifying index.file for ${selectorName}. We detected the string "${camel}" inside the index file so we assumed a reference already existed.`)
+                return;
+            }
+            const newHTML = `${data}${exportStatement}`;
+            fs.writeFile(indexPath,newHTML,()=>{
+                console.log("Index file updated. Thank you!");
+            });
+        })
+    });
 });
 
-fs.readFile(indexPath, "utf8", (err,data)=>{
-    if (data.includes(camel)){
-        console.log(`Not modifying index, string ${camel} detected inside index file.`)
-        return;
-    };
-    const newHTML = `${data}${exportStatement}
-`;
-
-    console.log("Generated new index.js...",newHTML);
-    fs.writeFile(indexPath,newHTML,()=>{
-
-        console.log("Thank you!");
-    });
-})
