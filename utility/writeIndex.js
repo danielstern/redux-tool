@@ -18,8 +18,6 @@ module.exports = (directory,name,cb)=>{
         }
 
         const exportStatement = template(exportStatementTemplate)({name});
-        // console.log(exportStatement,name,exportStatementTemplate);
-        // return;
         const newHTML = `${data}${exportStatement}`;
         fs.writeFile(indexPath,newHTML,()=>{
             cb();

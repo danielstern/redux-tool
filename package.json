@@ -8,7 +8,8 @@
   },
   "bin": {
     "redux-tool": "man.js",
-    "redux-tool-selector": "cli/selector.js"
+    "redux-tool-selector": "cli/selector.js",
+    "redux-tool-action": "cli/actionCreator.js"
   },
   "keywords": [],
   "author": "",

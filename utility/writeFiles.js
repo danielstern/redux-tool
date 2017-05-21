@@ -7,13 +7,16 @@ module.exports = ({
     newFilePath,
     fileHTML,
     name
-}) =>{
+},cb) =>{
     mkdirp(folderPath,(err)=>{
         if (err) throw err;
         fs.writeFile(newFilePath,fileHTML,()=>{
             console.log(`Created ${newFilePath}`);
             writeIndex(folderPath,name,()=>{
                 console.log("Index file updated. Thank you!");
+                if (cb) {
+                    cb();
+                }
             });
         });
     });
