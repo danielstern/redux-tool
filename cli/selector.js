@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 const { argv } = require('optimist');
-const { template, assign } = require('lodash');
+const { template, assign, merge } = require('lodash');
 let config = require('./../redux.tool.config');
 const fs = require('fs');
 
@@ -13,22 +13,19 @@ const exportStatementTemplate = require('./../templates/exportStatement');
 // const dir = process.cwd;
 try {
     const path = require('path');
-    // const config = require(`${dir}/redux.tool.config.js`);
-    console.log("Located local configuration.");
-    const configPath = path.join(path.dirname(fs.realpathSync(__filename)), '../redux.tool.config.js');
+    const configPath = path.join(process.cwd(), '/redux.tool.config.js');
     let externalConfig = require(configPath);
-    config = assign(config,externalConfig);
-    console.log(configPath, config);
+    config = merge(config,externalConfig);
+    console.log("Located local configuration.");
+
 } catch (e) {
     console.log("Could not find config file, using defaults.",e);
 
 }
+
 const {
     path
 } = config;
-// fs.readFile(dir/, "utf8", (err,data)=>{
-// console.log(process.cwd());
-// return;
 
 const name = argv._[0];
 if (!name) {
