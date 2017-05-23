@@ -9,7 +9,8 @@
   "bin": {
     "redux-tool": "man.js",
     "redux-tool-selector": "cli/selector.js",
-    "redux-tool-action": "cli/actionCreator.js"
+    "redux-tool-action": "cli/actionCreator.js",
+    "redux-tool-component": "cli/component.js"
   },
   "keywords": [],
   "author": "",
@@ -18,6 +19,7 @@
     "lodash": "^4.17.4",
     "mkdirp": "^0.5.1",
     "optimist": "^0.6.1",
+    "react-redux": "^5.0.5",
     "underscore.string": "^3.3.4"
   }
 }

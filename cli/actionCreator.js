@@ -28,9 +28,13 @@ const newFilePath = folderPath + filename;
 const fileHTML = template(actionCreatorTemplate)({name,upper,variable});
 const writeFiles = require('./../utility/writeFiles');
 
+require('./../utility/generateUtilities')();
+
 writeFiles({
     folderPath,
     newFilePath,
     fileHTML,
     name:actionCreatorName
 });
+
+

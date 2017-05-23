@@ -5,7 +5,7 @@ const {
     path,
 } = require('./getConfig')();
 
-const generateUtilities = ()=>{
+const generateUtilities = (cb)=>{
     const folderPath = `${path}utility/`;
     const indexPath = `${folderPath}index.js`;
     const macPath = `${folderPath}makeActionCreator.js`;

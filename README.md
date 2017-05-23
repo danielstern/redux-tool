@@ -9,6 +9,8 @@ Redux-Tool, an *unopinionated* helper to create your Redux files for you, handli
 `npm install -g redux-tool`
 
 ## Usage
+**Please note that you should always quickly commit your progress before using any CLI tool**
+
 Redux tool is run from the command line.
 It creates necessary files for a React-Redux application and updates the index. 
 It assumes you are using ES6 with `import` statements.

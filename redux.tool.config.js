@@ -3,11 +3,14 @@ module.exports = {
     templates:{
         selector:require('./templates/selector'),
         exportStatement: require('./templates/exportStatement'),
-        actionCreator:require('./templates/actionCreator')
+        actionCreator:require('./templates/actionCreator'),
+        componentDisplay:require('./templates/componentDisplay'),
+        componentContainer:require('./templates/componentContainer')
     },
     folderNames:{
         selectors:'selectors',
         actionCreators:'actions',
-        reducers:'reducers'
+        reducers:'reducers',
+        components:'components'
     }
 };
