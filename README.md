@@ -1,4 +1,4 @@
-# Redux Tool ![logo](https://cloud.githubusercontent.com/assets/4268152/26364385/2af2943c-3fb2-11e7-84ce-ff3d792ea273.png) | width=250
+# Redux Tool ![logo](https://cloud.githubusercontent.com/assets/4268152/26364385/2af2943c-3fb2-11e7-84ce-ff3d792ea273.png | width=250) 
 ![promo-full](https://cloud.githubusercontent.com/assets/4268152/26363752/fecc6b14-3faf-11e7-9e93-a22c2a0ce73c.gif)
 ## Problem
 
