@@ -3,6 +3,7 @@
 const { argv } = require('optimist');
 const { template } = require('lodash');
 const config = require('./../utility/getConfig')();
+require('./../utility/generateUtilities')();
 
 const {
     path,

@@ -10,7 +10,8 @@
     "redux-tool": "man.js",
     "redux-tool-selector": "cli/selector.js",
     "redux-tool-action": "cli/actionCreator.js",
-    "redux-tool-component": "cli/component.js"
+    "redux-tool-component": "cli/component.js",
+    "redux-tool-reducer": "cli/reducer.js"
   },
   "keywords": [],
   "author": "",

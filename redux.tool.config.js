@@ -4,6 +4,7 @@ module.exports = {
         selector:require('./templates/selector'),
         exportStatement: require('./templates/exportStatement'),
         actionCreator:require('./templates/actionCreator'),
+        reducer:require('./templates/reducer'),
         componentDisplay:require('./templates/componentDisplay'),
         componentContainer:require('./templates/componentContainer')
     },
