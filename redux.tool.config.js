@@ -7,6 +7,7 @@ module.exports = {
         reducer:require('./templates/reducer'),
         componentDisplay:require('./templates/componentDisplay'),
         componentContainer:require('./templates/componentContainer')
+        saga:require('./templates/saga')
     },
     folderNames:{
         selectors:'selectors',

@@ -11,7 +11,8 @@
     "redux-tool-selector": "cli/selector.js",
     "redux-tool-action": "cli/actionCreator.js",
     "redux-tool-component": "cli/component.js",
-    "redux-tool-reducer": "cli/reducer.js"
+    "redux-tool-reducer": "cli/reducer.js",
+    "redux-tool-saga": "cli/saga.js"
   },
   "keywords": [],
   "author": "",
