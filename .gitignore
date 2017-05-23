@@ -60,4 +60,4 @@ typings/
 src
 src/*
 
-.idea
+.idea/workspace.xml
