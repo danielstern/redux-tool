@@ -6,13 +6,14 @@ module.exports = {
         actionCreator:require('./templates/actionCreator'),
         reducer:require('./templates/reducer'),
         componentDisplay:require('./templates/componentDisplay'),
-        componentContainer:require('./templates/componentContainer')
+        componentContainer:require('./templates/componentContainer'),
         saga:require('./templates/saga')
     },
     folderNames:{
         selectors:'selectors',
         actionCreators:'actions',
         reducers:'reducers',
-        components:'components'
+        components:'components',
+        sagas:'sagas'
     }
 };

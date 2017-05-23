@@ -20,9 +20,9 @@ if (!name) {
 }
 
 const { camel } = require('./../utility/toMultipleCases')(name);
-const actionNameUpper = require('./../utility/toMultipleCases')(actionName);
+const actionNameUpper = require('./../utility/toMultipleCases')(actionName).upper;
 const sagaName = `${camel}`;
-const filename = `${sagaName}.js`;
+const filename = `${sagaName}Saga.js`;
 const folderPath = `${path}${sagaFolderName}/`;
 const newFilePath = folderPath + filename;
 const fileHTML = template(sagaTemplate)({name:camel,actionName:actionNameUpper});

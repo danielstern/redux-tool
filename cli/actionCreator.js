@@ -27,14 +27,15 @@ const folderPath = `${path}${actionCreatorFolderName}/`;
 const newFilePath = folderPath + filename;
 const fileHTML = template(actionCreatorTemplate)({name,upper,variable});
 const writeFiles = require('./../utility/writeFiles');
-
+const secondaryStatement = `, ${upper} `;
 require('./../utility/generateUtilities')();
 
 writeFiles({
     folderPath,
     newFilePath,
     fileHTML,
-    name:actionCreatorName
+    name:actionCreatorName,
+    secondaryStatement
 });
 
 

@@ -6,10 +6,10 @@ const {
 } = config;
 const exportStatementTemplate = templates.exportStatement;
 
-module.exports = (directory,name,cb,folderPath)=>{
+module.exports = (directory,name,cb,folderPath,secondaryStatement)=>{
     const indexPath = `${directory}index.js`;
     fs.readFile(indexPath, "utf8", (err,data)=>{
-        let exportStatement = template(exportStatementTemplate)({name,folderPath:folderPath || name});
+        let exportStatement = template(exportStatementTemplate)({name,folderPath:folderPath || name,secondaryStatement:secondaryStatement || ""});
         if (data === undefined) {
             data = "";
             exportStatement = trim(exportStatement);

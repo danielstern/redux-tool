@@ -1,2 +1,2 @@
 module.exports =  `
-export { <%= name %> } from './<%= folderPath %>';`;
+export { <%= name %> <%= secondaryStatement %>} from './<%= folderPath %>';`;
