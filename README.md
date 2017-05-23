@@ -5,7 +5,7 @@ Redux apps are great, but often creating just one new user interaction requires 
 
 
 ## Solution
-Redux-Tool, an *unopinionated* helper to create your Redux files for you, handling all the boilerplate .
+Redux-Tool, an *unopinionated* helper to create your Redux files for you, handling all the boilerplate.
 
 Redux-Tool does all the repetitive tasks necessary to create your app,
 - Creates all necessary new folders and up-to-date index files for those folders
@@ -16,9 +16,9 @@ Redux-Tool does all the repetitive tasks necessary to create your app,
 ## Installation
 `npm install -g redux-tool`
 
-This creates the following commands available in the command line,
+This makes the following commands available in the command line,
 
-```shell
+```
 redux-tool-selector [propertyName]
 redux-tool-action [actionName] [argumentName]
 redux-tool-reducer [propertyName] [defaultValue=0]
@@ -41,7 +41,7 @@ Example:
 Description: Create a file `./src/selectors/taxAmountSelector.js` and updates the index of the `./src/selectors/` directory.
   
 ###  Changing Templates
-To change the templates, simply create a `redux-tool-config.js` file and indicate the templates there. See the `redux-tool-config.js` of this repository for a full example.
+To change the templates, create a `redux-tool-config.js` file and indicate the templates there. See the [`redux-tool-config.js`](redux-tool-config.js) of this repository for a full example.
 
 ```javascript
 module.exports = {
