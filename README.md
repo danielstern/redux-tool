@@ -1,12 +1,9 @@
-# Redux Tool ![logo](https://cloud.githubusercontent.com/assets/4268152/26364385/2af2943c-3fb2-11e7-84ce-ff3d792ea273.png | width=250) 
+# Redux Tool
 ![promo-full](https://cloud.githubusercontent.com/assets/4268152/26363752/fecc6b14-3faf-11e7-9e93-a22c2a0ce73c.gif)
-## Problem
 
-Redux apps are great, but often creating just one new user interaction requires touching 8, 9, even 10 or more files.
-
-
-## Solution
-Redux-Tool, an *unopinionated* helper to create your Redux files for you, handling all the boilerplate.
+## About
+![logo](https://cloud.githubusercontent.com/assets/4268152/26364385/2af2943c-3fb2-11e7-84ce-ff3d792ea273.png | width=200) 
+Redux-Tool, an *unopinionated* helper to create your Redux files for you, handling all the boilerplate. Redux apps are great, but often creating just one new user interaction requires touching 8, 9, even 10 or more files. This tool lets you automate that process easily.
 
 Redux-Tool does all the repetitive tasks necessary to create your app,
 - Creates all necessary new folders and up-to-date index files for those folders
