@@ -21,16 +21,16 @@ if (!name) {
 
 const { camel } = require('./../utility/toMultipleCases')(name);
 const actionNameUpper = require('./../utility/toMultipleCases')(actionName).upper;
-const sagaName = `${camel}`;
-const filename = `${sagaName}Saga.js`;
+const sagaName = `${camel}Saga`;
+const filename = `${sagaName}.js`;
 const folderPath = `${path}${sagaFolderName}/`;
 const newFilePath = folderPath + filename;
-const fileHTML = template(sagaTemplate)({name:camel,actionName:actionNameUpper});
+const fileHTML = template(sagaTemplate)({sagaName,actionName:actionNameUpper,name:camel});
 const writeFiles = require('./../utility/writeFiles');
 
 writeFiles({
     folderPath,
     newFilePath,
     fileHTML,
-    name:sagaName
+    name:sagaName,
 });

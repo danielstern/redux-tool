@@ -8,6 +8,6 @@ function* <%=name%>() {
 
 }
 
-export function* <%=name%>Saga() {
+export function* <%=sagaName%>() {
     yield takeEvery(<%=actionName%>, <%=name%>);
 }`;

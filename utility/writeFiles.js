@@ -7,7 +7,8 @@ module.exports = ({
     newFilePath,
     fileHTML,
     name,
-    secondaryStatement
+    secondaryStatement,
+    fileName
 },cb) =>{
     mkdirp(folderPath,(err)=>{
         if (err) throw err;
