@@ -4,6 +4,10 @@ import {
     <%=actionName %>,
 } from '../actions'
 
+import {
+
+} from '../selectors'
+
 function* <%=name%>() {
 
 }
