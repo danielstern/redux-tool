@@ -1,5 +1,5 @@
 module.exports = `import { createSelector } from 'reselect'
 export const <%= name %>Selector = createSelector(
-   state=>state.<%= name %>,
+   state=>state.get("<%= name %>"),
    <%= name %>=><%= name %>
 )`;

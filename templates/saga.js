@@ -1,8 +1,8 @@
-module.exports = `import { takeEvery } from 'redux-saga/effects'
+module.exports = `import { takeEvery, put, select } from 'redux-saga/effects'
 
 import {
     <%=actionName %>,
-} from './../actions'
+} from '../actions'
 
 function* <%=name%>() {
 

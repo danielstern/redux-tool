@@ -34,3 +34,5 @@ writeFiles({
     fileHTML,
     name:reducerName
 });
+
+require('./selector');
